@@ -1,0 +1,222 @@
+My name is Gyanaranjan Sahoo,  I have 3 years of experience as a backend Developer, Currently I am working with apexon.
+
+I have expertise in Technologies like java ,hibernate , Spring Boot, RestAPi,Microservices MySql,etc.
+
+Previous I am working with a banking Domain , the Project name is Excalibur.
+
+Project: Banking Application Technologies Used: JAVA, Spring Boot, Spring Security, JWT, MySQL, JPA, RESTful API
+
+I built a secure banking application where users can create accounts, make deposits/withdrawals, and transfer funds between accounts. I used Spring Boot to develop the backend, implemented JWT-based authentication for security, and used MySQL as the database.
+
+Roles And Responsibility-
+
+Ø My first responsibility was understanding the requirements of the banking system, such as user authentication, account creation, and secure transaction management
+
+Ø I designed RESTful APIs for user registration, login, account management, and transactions.
+
+Ø I designed the database schema for Users, Accounts, and Transactions using MySQL and managed entity relationships with JPA/Hibernate.”
+
+Ø I used Spring Boot to build the core of the application, structuring the code into layers (Controller, Service, Repository) to separate concerns and enhance maintainability
+
+Ø I integrated Spring Security to handle user authentication and authorization. I created custom roles for different types of users, such as ADMIN and CUSTOMER.”
+
+Ø I used JWT (JSON Web Tokens) to implement stateless authentication. The JWT is generated at login and passed with every API request to verify the user’s identity.”
+
+I ensured that passwords were securely stored in the database by using the BCrypt hashing algorithm.”
+
+implemented a custom UserDetailsService to load user details from the database during authentication.”
+
+I used role-based access control to restrict access to specific endpoints. For example, only users with the ADMIN role could access certain administrative endpoints.”
+
+Ø JPA/Hibernate: “I used Spring Data JPA with Hibernate to persist entities such as users, accounts, and transactions
+
+I set up MySQL for database operations and optimized queries for better performance in banking operations.”
+
+Error Handling and Validation
+
+Ø Global Exception Handling: “I implemented global exception handling in Spring Boot to manage errors such as invalid user input or database connectivity issues.”
+
+Ø Input Validation: “I used annotations like @Valid and @NotNull to validate user input for fields like email, account numbers, and transaction amounts.”
+
+Ø I tested the APIs using Postman for functionality, performance, and security.
+
+
+
+Challenges and Solutions
+
+Q: What challenges did you face in this project, and how did you resolve them?
+
+Ø One challenge was ensuring the atomicity of the transfer. I had to use Spring's @Transactional annotation to ensure that if any part of the transaction (debit or credit) failed, the entire operation would roll back.
+
+Ø Another challenge was handling high concurrency, as multiple users might try to transfer money at the same time. I handled this by using optimistic locking to prevent multiple transactions from conflicting with each other.
+
+Handling large amounts of data for transactions.
+
+Ø Solution: Implemented pagination on endpoints that returned lists of transactions to avoid performance bottlenecks.
+
+Ø One challenge I faced was ensuring the security of transactions. To resolve this, I implemented end-to-end encryption and JWT for secure communications.
+
+Ø One challenge was ensuring the security of user data. I addressed this by implementing strong password hashing and validating user inputs.
+
+Ø Implementing secure communication between the frontend and backend.
+
+Solution: Used HTTPS and JWT token validation on every request
+
+I conducted code reviews with my peers and wrote unit tests to cover critical functionalities."
+
+
+Spring Security
+
+· Q: How does Spring Security handle authentication and authorization? A: Spring Security intercepts requests and checks for authentication through filters. If a valid JWT token is present, it retrieves the user's details and checks the authorities (roles) associated with that user. Role-based access is controlled using annotations like @PreAuthorize on methods or configurations at the controller level.
+
+· Q: How did you implement role-based access control? A: I used the @PreAuthorize annotation on methods to enforce role-based access control. For example, in the banking app, only users with the role ADMIN can access certain endpoints like approving transactions, while CUSTOMER roles are restricted to account and transaction views.
+
+· Q: How do you prevent unauthorized access? A: I configure Spring Security to ensure that only authenticated users with valid JWT tokens can access the API endpoints. Any request without a valid token is denied access, and sensitive endpoints are restricted using role-based access control.
+
+
+Database and JPA
+
+Q: How did you handle relationships between entities in JPA? A: In this project, I used JPA to manage relationships between entities. For instance, the User entity has a one-to-many relationship with Account, and Account has a one-to-many relationship with Transaction. I used JPA annotations like @OneToMany, @ManyToOne, and @JoinColumn to map these relationships.
+
+Q: What are the performance considerations when using JPA? A: Performance optimization can be achieved by using fetch strategies wisely. For example, I used LAZY fetching for large data relationships like transactions to prevent loading all records at once. Additionally, I avoided the N+1 query problem by using JOIN FETCH queries.
+
+Q: How do you ensure data consistency during transactions? A: I used Spring’s transaction management with @Transactional annotations to ensure that all banking operations (e.g., deposits, transfers) are atomic. This ensures that either all operations complete successfully, or none do, maintaining data consistency.
+
+Q: How do you handle errors in your APIs? A: I implemented global exception handling using @ControllerAdvice to manage different types of exceptions (e.g., validation errors, unauthorized access). Each error response includes a clear message and the appropriate HTTP status code.
+
+Q: How do you ensure sensitive data like passwords is stored securely? A: I used BCryptPasswordEncoder to hash and salt passwords before storing them in the database. This ensures that even if the database is compromised, passwords cannot be easily retrieved.
+
+Testing
+
+Q: How did you test your application? A: I used unit testing with JUnit to test individual components and services. For integration testing, I used Spring's @SpringBootTest to ensure that the application context loads properly, and I mocked dependencies using Mockito. I also performed manual testing using Postman to test the APIs.
+
+what other modules are uses in the banking project-
+
+Ø User Management Module
+
+Ø Account Management Module
+
+Ø Transaction Management Module
+
+Ø Payment and Billing Module
+
+Ø Loan Management Module Credit/Debit Card Management Module
+
+Ø Fund Transfer Module
+
+Ø Notification and Alerts Module
+
+Ø Report Generation Module
+
+Ø Admin Management Module
+
+Ø Security Module
+
+Ø Audit and Compliance Module
+
+Ø Customer Support Module
+
+Ø Loan Eligibility and Credit Scoring Module
+
+what is the last user story u develop?
+
+Example User Story: "As a bank customer, I want to transfer funds between my accounts so that I can easily manage my finances."
+
+1. Business Problem/Requirement:
+
+· The bank needed a feature allowing customers to transfer funds between their checking and savings accounts through the online banking portal.
+
+· This involved implementing a secure, fast, and reliable way to transfer money while ensuring proper validations, notifications, and recording the transaction history.
+
+2. Acceptance Criteria:
+
+· The user must be authenticated (JWT-based) before initiating the transfer.
+
+· The system should validate the account balance to ensure there are enough funds.
+
+· The system must update both accounts' balances in a single transaction (atomic operation).
+
+· An email and/or SMS notification should be sent upon successful transfer.
+
+· The transaction must be reflected in the user’s transaction history.
+
+3. Technical Approach:
+
+v Backend: I worked on the backend service to handle the fund transfer.
+
+Ø Developed a REST API endpoint (/transfer) in the Transaction Management Module.
+
+Ø Used Spring Boot and JPA (Hibernate) to handle database interactions.
+
+Ø Created a service to handle the business logic, including balance validation, fund deduction, and crediting to the target account.
+
+Ø Implemented proper exception handling for insufficient balance, invalid account numbers, etc.
+
+v Security: Implemented JWT-based authentication to ensure only logged-in users could initiate transactions.
+
+v Transaction Management: Used Spring Transaction Management to ensure that the entire transfer (debit and credit) happened in a single transaction, avoiding inconsistent data in case of failures.
+
+o Testing: I wrote unit tests using JUnit and Mockito to mock the service layer and ensure proper validation and business logic.
+
+v Database: Ensured proper indexing and performance tuning for large volumes of transactions by optimizing the SQL queries through Hibernate.
+
+
+
+
+Summary of Actions to Take When a Microservice is Down:
+
+1. Circuit Breaker: Implement a circuit breaker to stop repeated calls to a failed service.
+
+2. Service Discovery: Use Eureka or Consul to reroute requests to another healthy service instance.
+
+3. Retry Logic: Retry failed requests using the retry pattern with exponential backoff.
+
+4. Message Queues: Use asynchronous messaging (RabbitMQ, Kafka) to process requests when the service is available.
+
+5. Fallback Responses: Gracefully degrade functionality by providing fallback responses or cached data.
+
+6. Monitoring and Alerts: Continuously monitor the health of services and set up alerts.
+
+7. Redundancy and Failover: Ensure you have multiple instances and failover mechanisms for services and databases.
+
+ApplicationUser
+
+Ø Bank Customers
+
+Ø Bank Employees
+
+Ø Bank Administrators (Internal Staff)
+
+Ø Third-Party Services
+
+Ø Regulatory Authorities
+
+Summary of Who Uses the Account Transaction Module:
+
+· Bank Customers for initiating and managing transactions.
+
+· Customer Service Representatives to assist with transaction issues and queries.
+
+· Bank Administrators for monitoring and managing transaction approval and compliance.
+
+· External Payment Processors that handle transactions involving external accounts or services.
+
+· Auditors and Regulatory Authorities for ensuring transaction compliance with financial laws.
+
+Performance Optimization
+
+· Question: "The application starts experiencing slow response times during peak usage. How would you identify and resolve performance bottlenecks in the application?"
+
+· Expected Answer: the steps i would take, such as profiling the application, analysing database queries for efficiency, optimizing API responses, and possibly implementing caching mechanisms to reduce load on the server.
+
+Handling Errors
+
+· Question: "During a transaction, a user encounters an error message. What steps would you take to ensure that the user is informed effectively and the issue is resolved?"
+
+· Expected Answer: the importance of user-friendly error messages, logging errors for analysis, implementing a notification system for critical issues, and establishing a feedback loop for users to report issues directly.
+
+Scalability Challenges
+
+· Question: "As user adoption grows, how would you ensure that your application can scale to handle increased traffic and data load?"
+
+· Expected Answer: Discuss strategies such as using microservices architecture, load balancing, database sharding, horizontal scaling, and possibly leveraging cloud services for
