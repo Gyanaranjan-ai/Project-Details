@@ -1,0 +1,102 @@
+
+---
+
+### **Use Case 1: Transaction Charge Calculation**
+
+- **Summary**: When a user initiates a transaction, the system calculates applicable charges based on predefined rates and rules set by the bank.
+- **Actors**: Bank Users, Calculation Engine
+- **Preconditions**: The transaction rules and rates are configured in the system.
+
+- **Flow**:
+  1. The user initiates a transaction request.
+  2. The calculation engine retrieves the transaction details and applicable rules.
+  3. The system computes the transaction charges and adds them to the total transaction cost.
+  4. The user is informed of the charge details before finalizing the transaction.
+
+- **Acceptance Criteria**:
+  - The system applies the correct charges based on predefined rules.
+  - The user is notified of the charges before confirming the transaction.
+  - Charges are consistently calculated across transactions with similar attributes.
+  - Charge details are saved in the transaction record for audit purposes.
+
+---
+
+### **Use Case 2: Invoice Processing and Ledger Posting**
+
+- **Summary**: Automate the processing of invoices by capturing details, calculating accruals, handling allocations, and posting them to the ledger.
+- **Actors**: Bank Employees, Finance Department
+- **Preconditions**: Invoices are uploaded, and users have the necessary permissions.
+
+- **Flow**:
+  1. The system captures invoice details and validates the information.
+  2. Accruals are calculated based on predefined financial rules.
+  3. Allocations are assigned, and the system posts the details to the financial ledger.
+  4. Notifications are sent to the finance team for confirmation.
+
+- **Acceptance Criteria**:
+  - The system successfully captures and validates invoice details.
+  - Accruals and allocations are accurately calculated based on configured rules.
+  - The ledger posting occurs without errors, and a confirmation is sent to the finance team.
+  - Invoice records can be accessed for future audit or reference.
+
+---
+
+### **Use Case 3: Reconciliation of Trades and Payments**
+
+- **Summary**: Ensure the alignment of financial records through automated trade and payment reconciliation processes.
+- **Actors**: Bank Reconciliation Team, Financial Systems
+- **Preconditions**: Trade and payment records are available.
+
+- **Flow**:
+  1. The reconciliation team initiates the reconciliation process.
+  2. The system compares trade and payment records, identifying any discrepancies.
+  3. In case of a mismatch, an exception report is generated.
+  4. The reconciliation team addresses and resolves discrepancies.
+
+- **Acceptance Criteria**:
+  - The system identifies and flags all mismatches during reconciliation.
+  - An exception report is generated with details of all discrepancies.
+  - All reconciliation records are updated accurately once discrepancies are resolved.
+  - Reconciled data is aligned with bank standards and accessible to authorized personnel.
+
+---
+
+### **Use Case 4: Exception Management and Discrepancy Resolution**
+
+- **Summary**: Proactively detect and handle discrepancies in data or calculations within financial records.
+- **Actors**: System Administrator, Finance Team
+- **Preconditions**: Data is available and entered into the system.
+
+- **Flow**:
+  1. The system regularly checks financial records for inconsistencies or calculation errors.
+  2. If discrepancies are detected, they are logged as exceptions.
+  3. The finance team reviews the exceptions and identifies the cause.
+  4. Corrective actions are applied to resolve the data/calculation issues.
+
+- **Acceptance Criteria**:
+  - All discrepancies in data or calculations are logged as exceptions.
+  - Exception reports are available to authorized users for review and resolution.
+  - Exceptions are closed after corrective actions are taken.
+  - The system maintains accurate financial records with minimal residual errors.
+
+---
+
+### **Use Case 5: BI Reporting and Dashboard Access for Financial Insights**
+
+- **Summary**: Generate actionable insights for finance teams through BI reports and dashboards.
+- **Actors**: Finance Analysts, Decision Makers
+- **Preconditions**: Financial data is updated and available in the system.
+
+- **Flow**:
+  1. The finance team accesses the reporting dashboard.
+  2. Selects specific criteria (e.g., date range, transaction type) for report generation.
+  3. The system compiles and presents relevant data in visual formats, like graphs or tables.
+  4. Analysts review insights and make data-driven decisions.
+
+- **Acceptance Criteria**:
+  - Reports are generated accurately based on selected criteria.
+  - Dashboards update in real-time with minimal delay in data refresh.
+  - Financial insights are accurate and actionable for decision-making.
+  - Reports and dashboards meet compliance and security standards.
+
+---
